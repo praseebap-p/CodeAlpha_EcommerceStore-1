@@ -1,0 +1,19 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<h2 style="margin-bottom:20px;">All Products</h2>
+<div style="display:flex; flex-wrap:wrap; gap:20px;">
+    {% for product in products %}
+    <div style="background:white; padding:20px; border-radius:8px; width:250px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" style="width:100%; height:180px; object-fit:cover; border-radius:5px;">
+        {% endif %}
+        <h3 style="margin:10px 0;">{{ product.name }}</h3>
+        <p style="color:#666;">{{ product.description|truncatewords:10 }}</p>
+        <p style="font-size:18px; font-weight:bold; margin:10px 0;">${{ product.price }}</p>
+        <a href="/product/{{ product.pk }}/" class="btn">View Details</a>
+    </div>
+    {% empty %}
+        <p>No products available yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
