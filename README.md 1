@@ -1,0 +1,14 @@
+# CodeAlpha E-commerce Store
+
+A full-stack e-commerce web app built with Django.
+
+## Features
+- Product listings
+- Shopping cart
+- User login & register
+- Order processing
+
+## Tech Stack
+- Frontend: HTML, CSS, JavaScript
+- Backend: Django (Python)
+- Database: SQLite
