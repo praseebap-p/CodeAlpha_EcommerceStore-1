@@ -1,0 +1,13 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<div style="background:white; padding:30px; border-radius:8px; max-width:500px; margin:auto;">
+    <h2 style="margin-bottom:20px;">Checkout</h2>
+    <p style="font-size:20px; margin-bottom:20px;">Total: ${{ order.get_total }}</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn" style="width:100%; padding:15px; font-size:16px;">
+            Place Order ✅
+        </button>
+    </form>
+</div>
+{% endblock %}
